@@ -18,6 +18,11 @@ namespace KamiyoMod
         public void BattleStart(BattleSystem Ins)
         {
             if (!BChar.BuffFind("B_KamiyoMask21341")) BChar.BuffAdd("B_KamiyoMask21341", BChar);
+            BChar.Info.GetData.Text_Witch = new List<string>
+            {
+                ModLocalization.CharacterKamiyo21341Witch,
+                ModLocalization.CharacterKamiyo21341Witch_Low
+            };
         }
 
         public void Dodge(BattleChar Char, SkillParticle SP)
@@ -39,10 +44,10 @@ namespace KamiyoMod
                 foreach (var skill in BattleSystem.instance.AllyTeam.Skills.Where(skill => skill.Master == BChar))
                 {
                     skill.APChange = -1;
-                    if(!_changedAp.Contains(skill))_changedAp.Add(skill);
+                    if (!_changedAp.Contains(skill)) _changedAp.Add(skill);
                     if (skill.NotCount) continue;
                     skill.NotCount = true;
-                    if(!_changedSwiftness.Contains(skill))_changedSwiftness.Add(skill);
+                    if (!_changedSwiftness.Contains(skill)) _changedSwiftness.Add(skill);
                 }
             }
             else
