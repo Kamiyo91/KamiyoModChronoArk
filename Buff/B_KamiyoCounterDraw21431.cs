@@ -1,9 +1,5 @@
-using System;
 using System.Collections;
 using System.Linq;
-using GameDataEditor;
-using UnityEngine;
-using static CharacterDocument;
 
 namespace KamiyoMod
 {

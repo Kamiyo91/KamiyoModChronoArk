@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Linq;
-using GameDataEditor;
 
 namespace KamiyoMod
 {
@@ -25,7 +24,7 @@ namespace KamiyoMod
 
         public void Counter(BattleChar target, SkillParticle SP, CastingSkill CastingSkill)
         {
-            BattleSystem.instance.AllyTeam.Draw(1);
+            BattleSystem.instance.AllyTeam.AP += 1;
             switch (target.Info.Ally)
             {
                 case true:

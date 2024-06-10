@@ -12,8 +12,9 @@ namespace KamiyoMod
     /// </summary>
     public class P_Kamiyo21341 : Passive_Char, IP_Dodge, IP_BattleStart_Ones
     {
-        private readonly List<Skill> _changedSwiftness = new List<Skill>();
         private readonly List<Skill> _changedAp = new List<Skill>();
+        private readonly List<Skill> _changedSwiftness = new List<Skill>();
+
         public void BattleStart(BattleSystem Ins)
         {
             if (!BChar.BuffFind("B_KamiyoMask21341")) BChar.BuffAdd("B_KamiyoMask21341", BChar);
@@ -34,6 +35,7 @@ namespace KamiyoMod
         public override void FixedUpdate()
         {
             if (BChar.HP <= 0)
+            {
                 foreach (var skill in BattleSystem.instance.AllyTeam.Skills.Where(skill => skill.Master == BChar))
                 {
                     skill.APChange = -1;
@@ -42,6 +44,7 @@ namespace KamiyoMod
                     skill.NotCount = true;
                     _changedSwiftness.Add(skill);
                 }
+            }
             else
             {
                 foreach (var skill in _changedSwiftness.ToList())
@@ -49,6 +52,7 @@ namespace KamiyoMod
                     skill.NotCount = false;
                     _changedSwiftness.Remove(skill);
                 }
+
                 foreach (var skill in _changedAp.ToList())
                 {
                     skill.APChange = 0;

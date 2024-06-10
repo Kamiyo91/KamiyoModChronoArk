@@ -1,5 +1,3 @@
-using ChronoArkMod;
-
 namespace KamiyoMod
 {
     //public class KamiyoMod_ModDefinition : ModDefinition

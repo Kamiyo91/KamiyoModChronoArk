@@ -22,6 +22,7 @@ namespace KamiyoMod
             if (skill != null) BattleSystem.instance.AllyTeam.Draw(skill);
             else BattleSystem.instance.AllyTeam.Draw(1);
         }
+
         public T SelectOne<T>(params T[] list)
         {
             return list[Random.Range(0, list.Length)];
