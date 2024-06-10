@@ -30,10 +30,5 @@ namespace KamiyoMod
         {
             return list[Random.Range(0, list.Length)];
         }
-
-        public T SelectOne<T>(List<T> list)
-        {
-            return list[Random.Range(0, list.Count)];
-        }
     }
 }

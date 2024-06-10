@@ -31,7 +31,7 @@ namespace KamiyoMod
         {
             _stack--;
             _stack = Mathf.Clamp(_stack, 0, 99);
-            if (_stack < 1) PlusStat.PerfectDodge = false;
+            if (_stack < 1) SelfDestroy();
         }
 
         public void Counter(BattleChar target, SkillParticle SP, CastingSkill CastingSkill)
