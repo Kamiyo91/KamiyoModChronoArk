@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using System.Linq;
 
 namespace KamiyoMod
@@ -6,7 +5,7 @@ namespace KamiyoMod
     /// <summary>
     ///     Focus
     /// </summary>
-    public class S_Kamiyo21341_6 : Skill_Extended, IP_Targeted, IP_PlayerTurn
+    public class S_Kamiyo21341_6 : Skill_Extended, IP_PlayerTurn, IP_SkillCastingStart
     {
         public void Turn()
         {
@@ -17,11 +16,18 @@ namespace KamiyoMod
             skill.APChange = -2;
         }
 
-        public void Targeted(Skill SkillD, List<BattleChar> Targets)
+        public void SkillCasting(CastingSkill ThisSkill)
         {
-            foreach (var _ in BattleSystem.instance.CastSkills.Where(castingSkill =>
-                         MySkill.OriginalSelectSkill == castingSkill.skill.OriginalSelectSkill))
-                BChar.BuffAdd("B_KamiyoCounterMana21431", BChar);
+            if (!BChar.BuffFind("B_KamiyoCounterMana21431"))
+            {
+                var buff = BChar.BuffAdd("B_KamiyoCounterMana21431", BChar) as B_KamiyoCounterMana21431;
+                buff?.GainStack();
+            }
+            else
+            {
+                var buff = BChar.Buffs.FirstOrDefault(x => x is B_KamiyoCounterMana21431) as B_KamiyoCounterMana21431;
+                buff?.GainStack();
+            }
         }
     }
 }

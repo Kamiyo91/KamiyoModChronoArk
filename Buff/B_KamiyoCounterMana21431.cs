@@ -1,25 +1,37 @@
 using System.Collections;
 using System.Linq;
+using UnityEngine;
 
 namespace KamiyoMod
 {
     public class B_KamiyoCounterMana21431 : Buff, IP_Dodge
     {
+        private int _stack;
+
         public void Dodge(BattleChar Char, SkillParticle SP)
         {
-            if (Char != BChar || SP.UseStatus.Info.Ally == BChar.Info.Ally) return;
+            if (_stack == 0 || Char != BChar || SP.UseStatus.Info.Ally == BChar.Info.Ally) return;
             foreach (var castingSkill in BattleSystem.instance.CastSkills.Where(castingSkill =>
                          castingSkill.Usestate == BChar))
             {
-                SelfDestroy();
+                SubStack();
                 Counter(SP.UseStatus, SP, castingSkill);
                 return;
             }
         }
 
-        public override void Init()
+        public void GainStack()
         {
+            _stack++;
+            _stack = Mathf.Clamp(_stack, 0, 99);
             PlusStat.PerfectDodge = true;
+        }
+
+        public void SubStack()
+        {
+            _stack--;
+            _stack = Mathf.Clamp(_stack, 0, 99);
+            if (_stack < 1) PlusStat.PerfectDodge = false;
         }
 
         public void Counter(BattleChar target, SkillParticle SP, CastingSkill CastingSkill)
