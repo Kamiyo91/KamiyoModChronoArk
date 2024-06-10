@@ -9,7 +9,7 @@ namespace KamiyoMod
 
         /// <summary>
         ///     Mask of Perception
-        ///     Gain 20% Lifesteal on attacks. Attacking enemies with 1 Action point will make you draw 1 Skill.
+        ///     Gain 10% Lifesteal on attacks. Attacking enemies with 1 Action point will make you draw 1 Skill.
         /// </summary>
         public static string Buff_B_KamiyoMask21341 = "B_KamiyoMask21341";
 
