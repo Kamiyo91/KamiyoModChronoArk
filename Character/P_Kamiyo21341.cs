@@ -39,10 +39,10 @@ namespace KamiyoMod
                 foreach (var skill in BattleSystem.instance.AllyTeam.Skills.Where(skill => skill.Master == BChar))
                 {
                     skill.APChange = -1;
-                    _changedAp.Add(skill);
+                    if(!_changedAp.Contains(skill))_changedAp.Add(skill);
                     if (skill.NotCount) continue;
                     skill.NotCount = true;
-                    _changedSwiftness.Add(skill);
+                    if(!_changedSwiftness.Contains(skill))_changedSwiftness.Add(skill);
                 }
             }
             else
