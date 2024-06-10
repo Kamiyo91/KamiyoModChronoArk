@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using ChronoArkMod;
 using ChronoArkMod.Plugin;
 using HarmonyLib;
 
@@ -37,12 +36,8 @@ namespace KamiyoMod
                 if (Char.Info.KeyData != "Kamiyo21341") return;
                 Char.Info.GetData.Text_Witch = new List<string>
                 {
-                    BattleText.CustomText(Char.GetTopPos(),
-                        ModManager.getModInfo("KamiyoMod").localizationInfo
-                            .SyetemLocalizationUpdate("CharacterKamiyo21341Witch")).Ptext.TextString,
-                    BattleText.CustomText(Char.GetTopPos(),
-                        ModManager.getModInfo("KamiyoMod").localizationInfo
-                            .SyetemLocalizationUpdate("CharacterKamiyo21341Witch_Low")).Ptext.TextString
+                    ModLocalization.CharacterKamiyo21341Witch,
+                    ModLocalization.CharacterKamiyo21341Witch_Low
                 };
             }
         }
