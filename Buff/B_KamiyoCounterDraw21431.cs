@@ -33,7 +33,6 @@ namespace KamiyoMod
 
         public void SubStack()
         {
-            Debug.LogError("Entry SubStack");
             _stack--;
             _stack = Mathf.Clamp(_stack, 0, 99);
             if (_stack < 1) SelfDestroy();
