@@ -1,4 +1,5 @@
 using System.Linq;
+using UnityEngine;
 
 namespace KamiyoMod
 {
@@ -20,7 +21,8 @@ namespace KamiyoMod
         {
             if (!BChar.BuffFind("B_KamiyoCounterMana21431"))
             {
-                var buff = BChar.BuffAdd("B_KamiyoCounterMana21431", BChar) as B_KamiyoCounterMana21431;
+                Debug.LogError("Add New Buff");
+                var buff = BChar.BuffAdd("B_KamiyoCounterMana21431", BChar, true) as B_KamiyoCounterMana21431;
                 buff?.GainStack();
             }
             else

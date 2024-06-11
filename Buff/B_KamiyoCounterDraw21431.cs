@@ -49,7 +49,6 @@ namespace KamiyoMod
                 case false when !target.IsDead:
                     CastingSkill.Target = target;
                     BattleSystem.DelayInput(Counter(CastingSkill));
-                    BattleSystem.DelayInputAfter(StrengthOff());
                     break;
             }
         }
@@ -60,14 +59,6 @@ namespace KamiyoMod
                 BattleSystem.instance.AllyCastingSkillUse(CastingSkill, false));
             BattleSystem.instance.CastSkills.Remove(CastingSkill);
             BattleSystem.instance.SaveSkill.Remove(CastingSkill);
-            PlusStat.Strength = false;
-            yield return null;
-        }
-
-        public IEnumerator StrengthOff()
-        {
-            PlusStat.Strength = false;
-            PlusStat.def = 0f;
             yield return null;
         }
     }

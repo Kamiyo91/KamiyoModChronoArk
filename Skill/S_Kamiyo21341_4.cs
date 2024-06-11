@@ -11,7 +11,7 @@ namespace KamiyoMod
         {
             if (!BChar.BuffFind("B_KamiyoCounterDraw21431"))
             {
-                var buff = BChar.BuffAdd("B_KamiyoCounterDraw21431", BChar) as B_KamiyoCounterDraw21431;
+                var buff = BChar.BuffAdd("B_KamiyoCounterDraw21431", BChar, true) as B_KamiyoCounterDraw21431;
                 buff?.GainStack();
             }
             else
