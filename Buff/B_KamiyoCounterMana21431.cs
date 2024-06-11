@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace KamiyoMod
 {
-    public class B_KamiyoCounterMana21431 : Buff, IP_Dodge
+    public class B_KamiyoCounterMana21431 : Buff, IP_Dodge, IP_SkillUse_Target
     {
         private int _stack;
 
@@ -14,10 +14,14 @@ namespace KamiyoMod
             foreach (var castingSkill in BattleSystem.instance.CastSkills.Where(castingSkill =>
                          castingSkill.Usestate == BChar))
             {
-                SubStack();
                 Counter(SP.UseStatus, SP, castingSkill);
                 return;
             }
+        }
+
+        public void AttackEffect(BattleChar hit, SkillParticle SP, int DMG, bool Cri)
+        {
+            if (SP.SkillData.AllExtendeds.Any(x => x is S_Kamiyo21341_6)) SubStack();
         }
 
         public void GainStack()

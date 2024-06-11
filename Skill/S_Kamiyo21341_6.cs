@@ -5,7 +5,7 @@ namespace KamiyoMod
     /// <summary>
     ///     Focus
     /// </summary>
-    public class S_Kamiyo21341_6 : Skill_Extended, IP_PlayerTurn, IP_SkillCastingStart, IP_SkillUse_Target
+    public class S_Kamiyo21341_6 : Skill_Extended, IP_PlayerTurn, IP_SkillCastingStart
     {
         public void Turn()
         {
@@ -28,12 +28,6 @@ namespace KamiyoMod
                 var buff = BChar.Buffs.FirstOrDefault(x => x is B_KamiyoCounterMana21431) as B_KamiyoCounterMana21431;
                 buff?.GainStack();
             }
-        }
-        public void AttackEffect(BattleChar hit, SkillParticle SP, int DMG, bool Cri)
-        {
-            if (!BChar.BuffFind("B_KamiyoCounterDraw21431")) return;
-            var buff = BChar.Buffs.FirstOrDefault(x => x is B_KamiyoCounterDraw21431) as B_KamiyoCounterDraw21431;
-            buff?.SubStack();
         }
     }
 }
