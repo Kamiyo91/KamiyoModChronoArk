@@ -12,7 +12,8 @@ namespace KamiyoMod
         {
             if (_stack == 0 || Char != BChar || SP.UseStatus.Info.Ally == BChar.Info.Ally) return;
             foreach (var castingSkill in BattleSystem.instance.CastSkills.Where(castingSkill =>
-                         castingSkill.Usestate == BChar))
+                         castingSkill.Usestate == BChar &&
+                         castingSkill.skill.AllExtendeds.Any(x => x is S_Kamiyo21341_4)))
             {
                 Counter(SP.UseStatus, SP, castingSkill);
                 return;

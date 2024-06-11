@@ -4,6 +4,7 @@ namespace KamiyoMod
     public static class ModItemKeys
     {
         public static string Buff_B_KamiyoCounterDraw21431 = "B_KamiyoCounterDraw21431";
+        public static string Buff_B_KamiyoCounterMana21431 = "B_KamiyoCounterMana21431";
 		/// <summary>
 		/// Mask of Perception
 		/// Gain 10% Lifesteal on attacks. Attacking enemies with 1 Action point will make you draw 1 Skill.
@@ -58,7 +59,6 @@ namespace KamiyoMod
 		/// If attacked while this skill is in Countdown, dodge the attack,cast the skill on the attacker and restore 1 Mana. If used as Fixed Skill, gain [Swiftness] and reduce it's cost by 1.
 		/// </summary>
         public static string Skill_S_Kamiyo21341_6 = "S_Kamiyo21341_6";
-        public static string Buff_B_KamiyoCounterMana21431 = "B_KamiyoCounterMana21431";
 
     }
 
