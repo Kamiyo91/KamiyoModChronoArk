@@ -21,8 +21,9 @@ namespace KamiyoMod
                 else BattleSystem.instance.AllyTeam.Draw(1);
             }
 
-            if (DMG == 0 || !(Misc.PerToNum(DMG, 10f) >= 1f)) return;
-            BChar.Heal(BChar, Misc.PerToNum(DMG, 10f), false);
+            var healAmount = Misc.PerToNum(DMG, 10f);
+            if (healAmount < 1) BChar.Heal(BChar, 1, false);
+            else BChar.Heal(BChar, healAmount, false);
         }
 
         public T SelectOne<T>(params T[] list)
