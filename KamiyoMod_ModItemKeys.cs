@@ -64,6 +64,15 @@ namespace KamiyoMod
 
     public static class ModLocalization
     {
+		/// <summary>
+		/// Korean:
+		/// English:
+		/// I see, this is the truth. I know that you can do it, good luck.
+		/// Japanese:
+		/// Chinese:
+		/// Chinese-TW:
+		/// </summary>
+        public static string ProgramMasterFinalKamiyo => ModManager.getModInfo("KamiyoMod").localizationInfo.SystemLocalizationUpdate("ProgramMasterFinalKamiyo");
 
     }
 }

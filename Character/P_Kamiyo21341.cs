@@ -17,6 +17,7 @@ namespace KamiyoMod
 
         public void BattleStart(BattleSystem Ins)
         {
+            BChar.Info.GetData.Text_MasterTarget = ModLocalization.ProgramMasterFinalKamiyo;
             if (!BChar.BuffFind("B_KamiyoMask21341")) BChar.BuffAdd("B_KamiyoMask21341", BChar);
         }
 
