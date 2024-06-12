@@ -18,11 +18,6 @@ namespace KamiyoMod
         public void BattleStart(BattleSystem Ins)
         {
             if (!BChar.BuffFind("B_KamiyoMask21341")) BChar.BuffAdd("B_KamiyoMask21341", BChar);
-            BChar.Info.GetData.Text_Witch = new List<string>
-            {
-                ModLocalization.CharacterKamiyo21341Witch,
-                ModLocalization.CharacterKamiyo21341Witch_Low
-            };
         }
 
         public void Dodge(BattleChar Char, SkillParticle SP)

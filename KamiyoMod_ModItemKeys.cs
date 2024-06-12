@@ -64,24 +64,6 @@ namespace KamiyoMod
 
     public static class ModLocalization
     {
-		/// <summary>
-		/// Korean:
-		/// English:
-		/// If you want, I can still handle it!
-		/// Japanese:
-		/// Chinese:
-		/// Chinese-TW:
-		/// </summary>
-        public static string CharacterKamiyo21341Witch => ModManager.getModInfo("KamiyoMod").localizationInfo.SystemLocalizationUpdate("CharacterKamiyo21341Witch");
-		/// <summary>
-		/// Korean:
-		/// English:
-		/// I don't know if I'll be able to handle it...
-		/// Japanese:
-		/// Chinese:
-		/// Chinese-TW:
-		/// </summary>
-        public static string CharacterKamiyo21341Witch_Low => ModManager.getModInfo("KamiyoMod").localizationInfo.SystemLocalizationUpdate("CharacterKamiyo21341Witch_Low");
 
     }
 }
