@@ -13,7 +13,7 @@ namespace KamiyoMod
             if (_stack == 0 || Char != BChar || SP.UseStatus.Info.Ally == BChar.Info.Ally) return;
             foreach (var castingSkill in BattleSystem.instance.CastSkills.Where(castingSkill =>
                          castingSkill.Usestate == BChar &&
-                         castingSkill.skill.AllExtendeds.Any(x => x is Kamiyo21341_Ex_0)))
+                         castingSkill.skill.AllExtendeds.Any(x => x is SkillEn_Kamiyo21341_0)))
             {
                 Counter(SP.UseStatus, SP, castingSkill);
                 return;
@@ -22,7 +22,7 @@ namespace KamiyoMod
 
         public void AttackEffect(BattleChar hit, SkillParticle SP, int DMG, bool Cri)
         {
-            if (SP.SkillData.AllExtendeds.Any(x => x is Kamiyo21341_Ex_0)) SubStack();
+            if (SP.SkillData.AllExtendeds.Any(x => x is SkillEn_Kamiyo21341_0)) SubStack();
         }
 
         public void GainStack()
