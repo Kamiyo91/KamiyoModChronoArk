@@ -10,7 +10,8 @@ namespace KamiyoMod
     {
         public void KillEffect(SkillParticle SP)
         {
-            BattleSystem.instance.AllyTeam.AP += 1;
+            if (SP.SkillData == MySkill)
+                BattleSystem.instance.AllyTeam.AP += 1;
         }
 
         public override void SkillUseSingle(Skill SkillD, List<BattleChar> Targets)

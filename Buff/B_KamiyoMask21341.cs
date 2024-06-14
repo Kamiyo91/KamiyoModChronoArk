@@ -20,15 +20,10 @@ namespace KamiyoMod
             if (!(hit is BattleEnemy battleEnemy)) return;
             if (battleEnemy.SkillQueue.Count == 0 ||
                 (battleEnemy.SkillQueue[0].CastSpeed != 0 && battleEnemy.SkillQueue[0].CastSpeed != 1)) return;
-            var skill = SelectOne(BattleSystem.instance.AllyTeam.Skills_Deck.Where(x => x.Master == BChar))
-                .FirstOrDefault();
+            var skillList = BattleSystem.instance.AllyTeam.Skills_Deck.Where(x => x.Master == BChar).ToList();
+            var skill = skillList[Random.Range(0, skillList.Count)];
             if (skill != null) BattleSystem.instance.AllyTeam.Draw(skill);
             else BattleSystem.instance.AllyTeam.Draw(1);
-        }
-
-        public T SelectOne<T>(params T[] list)
-        {
-            return list[Random.Range(0, list.Length)];
         }
     }
 }

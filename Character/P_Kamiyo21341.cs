@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using GameDataEditor;
 
 namespace KamiyoMod
 {
@@ -35,7 +36,7 @@ namespace KamiyoMod
 
         public override void FixedUpdate()
         {
-            if (BChar.HP <= 0)
+            if (BChar.BuffFind(GDEItemKeys.Buff_B_Neardeath))
             {
                 foreach (var skill in BattleSystem.instance.AllyTeam.Skills.Where(skill => skill.Master == BChar))
                 {
