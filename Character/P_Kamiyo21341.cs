@@ -25,7 +25,15 @@ namespace KamiyoMod
         public void Dodge(BattleChar Char, SkillParticle SP)
         {
             if (Char != BChar) return;
-            BChar.Heal(BChar, 2, false, true);
+            if (BChar.HP == BChar.GetStat.maxhp)
+            {
+                BChar.BuffAdd("B_KamiyoShield_21341", BChar);
+                BChar.BuffReturn("B_KamiyoShield_21341").BarrierHP += 2;
+            }
+            else
+            {
+                BChar.Heal(BChar, 2, false, true);
+            }
         }
 
         public override void Init()

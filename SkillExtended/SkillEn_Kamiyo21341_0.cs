@@ -23,6 +23,11 @@ namespace KamiyoMod
             }
         }
 
+        public override bool CanSkillEnforce(Skill MainSkill)
+        {
+            return !MainSkill.IsHeal;
+        }
+
         public override void Init()
         {
             Counting += 2;

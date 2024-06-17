@@ -3,7 +3,7 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <AssemblyName>KamiyoMod15062024001147</AssemblyName>
+    <AssemblyName>KamiyoMod17062024235239</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -386,6 +386,9 @@
   </ItemGroup>
   <!-- Compile ItemGroup Start-->
   <ItemGroup>
+    <Compile Include="Buff\B_KamiyoCounterRandomDraw21431.cs" />
+    <Compile Include="Buff\B_KamiyoEvadeUp_21341.cs" />
+    <Compile Include="Buff\B_KamiyoShield_21341.cs" />
     <Compile Include="KamiyoMod_ModDefinition.cs" />
     <Compile Include="KamiyoMod_ModItemKeys.cs" />
     <Compile Include="KamiyoMod_Plugin.cs" />
@@ -395,12 +398,16 @@
     <Compile Include="Buff\B_KamiyoMask21341.cs" />
     <Compile Include="Character\P_Kamiyo21341.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
+    <Compile Include="SkillExtended\Extended_Kamiyo_0.cs" />
     <Compile Include="Skill\S_Kamiyo21341_1.cs" />
     <Compile Include="Skill\S_Kamiyo21341_2.cs" />
     <Compile Include="Skill\S_Kamiyo21341_4.cs" />
     <Compile Include="Skill\S_Kamiyo21341_5.cs" />
     <Compile Include="Skill\S_Kamiyo21341_6.cs" />
     <Compile Include="SkillExtended\SkillEn_Kamiyo21341_0.cs" />
+    <Compile Include="Skill\S_Kamiyo21341_7.cs" />
+    <Compile Include="Skill\S_Kamiyo21341_8.cs" />
+    <Compile Include="Skill\S_Kamiyo21341_9.cs" />
   </ItemGroup>
   <ItemGroup />
   <!-- Compile ItemGroup End-->

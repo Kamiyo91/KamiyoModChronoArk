@@ -11,13 +11,9 @@ namespace KamiyoMod
         public void Dodge(BattleChar Char, SkillParticle SP)
         {
             if (_stack == 0 || Char != BChar || SP.UseStatus.Info.Ally == BChar.Info.Ally) return;
-            foreach (var castingSkill in BattleSystem.instance.CastSkills.Where(castingSkill =>
-                         castingSkill.Usestate == BChar &&
-                         castingSkill.skill.AllExtendeds.Any(x => x is S_Kamiyo21341_6)))
-            {
-                Counter(SP.UseStatus, SP, castingSkill);
-                return;
-            }
+            var castingSkill = BattleSystem.instance.CastSkills.FirstOrDefault(x =>
+                x.Usestate == BChar && x.skill.AllExtendeds.Any(y => y is S_Kamiyo21341_6));
+            Counter(SP.UseStatus, SP, castingSkill);
         }
 
         public void AttackEffect(BattleChar hit, SkillParticle SP, int DMG, bool Cri)
@@ -46,11 +42,14 @@ namespace KamiyoMod
             {
                 case true:
                     BattleSystem.instance.ActWindow.CastingWaste(CastingSkill.skill);
+                    BattleSystem.instance.CastSkills.Remove(CastingSkill);
+                    BattleSystem.instance.SaveSkill.Remove(CastingSkill);
+                    SubStack();
                     return;
                 case false when !target.IsDead:
                     CastingSkill.Target = target;
                     BattleSystem.DelayInput(Counter(CastingSkill));
-                    break;
+                    return;
             }
         }
 
