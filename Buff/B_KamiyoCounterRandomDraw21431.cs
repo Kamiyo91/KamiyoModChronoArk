@@ -18,7 +18,8 @@ namespace KamiyoMod
             var castingSkill = KamiyoUtil.GetCastingSkill<S_Kamiyo21341_9>(Char);
             if (castingSkill == null) return;
             KamiyoUtil.DrawCharacterSkill(BChar,
-                KamiyoUtil.PrepareRandomSkill(BChar, SkillKeys, new KamiyoSkillChangeParameters(ap: 0, autoDelete: 2)));
+                KamiyoUtil.PrepareRandomSkill(BChar, SkillKeys,
+                    new KamiyoSkillChangeParameters(ap: -99, autoDelete: 2)));
             KamiyoUtil.Counter(BChar, castingSkill, false, false);
             SubStack();
         }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using _1ChronoArkKamiyoUtil;
 
 namespace KamiyoMod
@@ -13,6 +14,11 @@ namespace KamiyoMod
             KamiyoUtil.AddShieldValue(BChar, nameof(B_KamiyoShield_21341), (int)(BChar.GetStat.maxhp * 0.20f));
             KamiyoUtil.GetBuff<B_KamiyoCounterRandomDraw21431>(BChar, nameof(B_KamiyoCounterRandomDraw21431))
                 ?.GainStack();
+        }
+
+        public override void SkillUseSingle(Skill SkillD, List<BattleChar> Targets)
+        {
+            KamiyoUtil.AddShieldValue(BChar, nameof(B_KamiyoShield_21341), (int)(BChar.GetStat.maxhp * 0.20f));
         }
     }
 }

@@ -38,6 +38,7 @@ namespace KamiyoMod
         public static string SimpleCampDialogue_CampDial_Kamiyo21341_Miss = "CampDial_Kamiyo21341_Miss";
         public static string SimpleCampDialogue_CampDial_Kamiyo21341_Charon = "CampDial_Kamiyo21341_Charon";
         public static string SkillExtended_Extended_Kamiyo_0 = "Extended_Kamiyo_0";
+        public static string SkillExtended_Extended_Kamiyo_1 = "Extended_Kamiyo_1";
 		/// <summary>
 		/// Kamiyo
 		/// Passive:
@@ -114,10 +115,9 @@ namespace KamiyoMod
 		/// <summary>
 		/// Rest
 		/// <color=#0000FF></color><color=#D53F1F>While this skill is in Countdown, the user cannot use any other skill.</color></color>
-		/// On casting overheal 2 HP, gain a Shield equal to 20% of Max HP. If attacked while this skill is in Countdown, dodge the attack, remove this skill from the Countdown list and create a copy of a random skill of Kamiyo and lower it's cost to 0.
+		/// On casting overheal 2 HP, gain a Shield equal to 20% of Max HP. If attacked while this skill is in Countdown, dodge the attack, remove this skill from the Countdown list and create a copy of a random skill of Kamiyo and lower it's cost to 0. If this skill is used, gain another Shield equal to 20% of Max Hp.
 		/// </summary>
         public static string Skill_S_Kamiyo21341_9 = "S_Kamiyo21341_9";
-        public static string SkillExtended_Extended_Kamiyo_1 = "Extended_Kamiyo_1";
 
     }
 
