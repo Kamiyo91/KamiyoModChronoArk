@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using System.Linq;
+using _1ChronoArkKamiyoUtil;
 
 namespace KamiyoMod
 {
@@ -12,12 +12,7 @@ namespace KamiyoMod
         {
             BattleSystem.instance.AllyTeam.AP += 3;
             BattleSystem.instance.AllyTeam.Draw(2);
-            foreach (var enemy in BattleSystem.instance.EnemyTeam.GetAliveChars().Select(x => x as BattleEnemy))
-            {
-                if (enemy == null) continue;
-                foreach (var skill in enemy.SkillQueue)
-                    skill.CastSpeed += 1;
-            }
+            KamiyoUtil.IncreaseEnemyActionCountByValue(1);
         }
     }
 }

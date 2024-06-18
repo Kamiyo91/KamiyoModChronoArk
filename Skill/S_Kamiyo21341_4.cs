@@ -1,4 +1,4 @@
-using System.Linq;
+using _1ChronoArkKamiyoUtil;
 
 namespace KamiyoMod
 {
@@ -9,16 +9,7 @@ namespace KamiyoMod
     {
         public void SkillCasting(CastingSkill ThisSkill)
         {
-            if (!BChar.BuffFind("B_KamiyoCounterDraw21431"))
-            {
-                var buff = BChar.BuffAdd("B_KamiyoCounterDraw21431", BChar, true) as B_KamiyoCounterDraw21431;
-                buff?.GainStack();
-            }
-            else
-            {
-                var buff = BChar.Buffs.FirstOrDefault(x => x is B_KamiyoCounterDraw21431) as B_KamiyoCounterDraw21431;
-                buff?.GainStack();
-            }
+            KamiyoUtil.GetBuff<B_KamiyoCounterDraw21431>(BChar, nameof(B_KamiyoCounterDraw21431))?.GainStack();
         }
     }
 }

@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Linq;
+using _1ChronoArkKamiyoUtil;
 using UnityEngine;
 
 namespace KamiyoMod
@@ -11,9 +11,9 @@ namespace KamiyoMod
         public void Dodge(BattleChar Char, SkillParticle SP)
         {
             if (_stack == 0 || Char != BChar || SP.UseStatus.Info.Ally == BChar.Info.Ally) return;
-            var castingSkill = BattleSystem.instance.CastSkills.FirstOrDefault(x =>
-                x.Usestate == BChar && x.skill.AllExtendeds.Any(y => y is S_Kamiyo21341_4));
-            Counter(SP.UseStatus, SP, castingSkill);
+            var castingSkill = KamiyoUtil.GetCastingSkill<S_Kamiyo21341_4>(Char);
+            KamiyoUtil.Counter(SP.UseStatus, castingSkill, true, false);
+            SubStack();
         }
 
         public void AttackEffect(BattleChar hit, SkillParticle SP, int DMG, bool Cri)
@@ -33,33 +33,6 @@ namespace KamiyoMod
             _stack--;
             _stack = Mathf.Clamp(_stack, 0, 99);
             if (_stack < 1) SelfDestroy();
-        }
-
-        public void Counter(BattleChar target, SkillParticle SP, CastingSkill CastingSkill)
-        {
-            BattleSystem.instance.AllyTeam.Draw(1);
-            switch (target.Info.Ally)
-            {
-                case true:
-                    BattleSystem.instance.ActWindow.CastingWaste(CastingSkill.skill);
-                    BattleSystem.instance.CastSkills.Remove(CastingSkill);
-                    BattleSystem.instance.SaveSkill.Remove(CastingSkill);
-                    SubStack();
-                    return;
-                case false when !target.IsDead:
-                    CastingSkill.Target = target;
-                    BattleSystem.DelayInput(Counter(CastingSkill));
-                    return;
-            }
-        }
-
-        public IEnumerator Counter(CastingSkill CastingSkill)
-        {
-            yield return BattleSystem.instance.StartCoroutine(
-                BattleSystem.instance.AllyCastingSkillUse(CastingSkill, false));
-            BattleSystem.instance.CastSkills.Remove(CastingSkill);
-            BattleSystem.instance.SaveSkill.Remove(CastingSkill);
-            yield return null;
         }
     }
 }

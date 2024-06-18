@@ -1,5 +1,4 @@
-using System.Linq;
-using UnityEngine;
+using _1ChronoArkKamiyoUtil;
 
 namespace KamiyoMod
 {
@@ -20,10 +19,7 @@ namespace KamiyoMod
             if (!(hit is BattleEnemy battleEnemy)) return;
             if (battleEnemy.SkillQueue.Count == 0 ||
                 (battleEnemy.SkillQueue[0].CastSpeed != 0 && battleEnemy.SkillQueue[0].CastSpeed != 1)) return;
-            var skillList = BattleSystem.instance.AllyTeam.Skills_Deck.Where(x => x.Master == BChar).ToList();
-            var skill = skillList[Random.Range(0, skillList.Count)];
-            if (skill != null) BattleSystem.instance.AllyTeam.Draw(skill);
-            else BattleSystem.instance.AllyTeam.Draw(1);
+            KamiyoUtil.DrawPrefCharacterSkillFromDeck(BChar);
         }
     }
 }

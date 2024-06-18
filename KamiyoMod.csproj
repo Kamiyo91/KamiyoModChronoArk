@@ -3,7 +3,7 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <AssemblyName>KamiyoMod18062024004711</AssemblyName>
+    <AssemblyName>KamiyoMod18062024120918</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -12,6 +12,9 @@
     <ProjectGuid>{ACE46054-F80C-4FFC-8EA1-23B7961293D2}</ProjectGuid>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="1ChronoArkKamiyoUtil">
+      <HintPath>..\..\..\..\..\..\..\..\Kamiyo\Projects\Dlls\1ChronoArkKamiyoUtil.dll</HintPath>
+    </Reference>
     <Reference Include="Accessibility">
       <Private>False</Private>
     </Reference>
@@ -382,6 +385,9 @@
       <Private>False</Private>
     </Reference>
     <!-- Extra Reference Start-->
+    <Reference Include="1ChronoArkKamiyoUtil">
+      <HintPath>..\..\KamiyoMod\Assemblies\1ChronoArkKamiyoUtil.dll</HintPath>
+    </Reference>
 <!-- Extra Reference End-->
   </ItemGroup>
   <!-- Compile ItemGroup Start-->
@@ -399,6 +405,7 @@
     <Compile Include="Character\P_Kamiyo21341.cs" />
     <Compile Include="obj\Debug\.NETFramework,Version=v4.7.2.AssemblyAttributes.cs" />
     <Compile Include="SkillExtended\Extended_Kamiyo_0.cs" />
+    <Compile Include="SkillExtended\Extended_Kamiyo_1.cs" />
     <Compile Include="Skill\S_Kamiyo21341_1.cs" />
     <Compile Include="Skill\S_Kamiyo21341_2.cs" />
     <Compile Include="Skill\S_Kamiyo21341_4.cs" />

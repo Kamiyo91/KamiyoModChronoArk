@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using _1ChronoArkKamiyoUtil;
 
 namespace KamiyoMod
 {
@@ -10,8 +11,7 @@ namespace KamiyoMod
         public override void SkillUseSingle(Skill SkillD, List<BattleChar> Targets)
         {
             BattleSystem.instance.AllyTeam.Draw(1);
-            BChar.BuffAdd("B_KamiyoShield_21341", BChar);
-            BChar.BuffReturn("B_KamiyoShield_21341").BarrierHP += (int)(BChar.GetStat.maxhp * 0.10f);
+            KamiyoUtil.AddShieldValue(BChar, nameof(B_KamiyoShield_21341), (int)(BChar.GetStat.maxhp * 0.10f));
         }
     }
 }

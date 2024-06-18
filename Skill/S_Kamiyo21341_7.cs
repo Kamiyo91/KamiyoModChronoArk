@@ -1,5 +1,5 @@
-using System.Collections;
 using System.Collections.Generic;
+using _1ChronoArkKamiyoUtil;
 using UnityEngine;
 
 namespace KamiyoMod
@@ -38,20 +38,12 @@ namespace KamiyoMod
             for (var i = 0; i < _dodgeCount; i++)
             {
                 if (Targets[0].IsDead) return;
-                var skill = Skill.TempSkill("S_Kamiyo21341_7_0", BChar, BChar.MyTeam);
-                skill.isExcept = true;
                 var ex = new Extended_Kamiyo_0();
                 ex.SetAdditionalDamage(SkillBasePlus.Target_BaseDMG);
-                skill.ExtendedAdd(ex);
-                BattleSystem.DelayInput(PassiveAttack(skill, Targets[0]));
+                KamiyoUtil.AdditionalAttack(BChar, Targets[0],
+                    KamiyoUtil.PrepareSkill(BChar, "S_Kamiyo21341_7_0",
+                        new KamiyoSkillChangeParameters(0, true, 0, 0, new List<Skill_Extended> { ex })), _dodgeCount);
             }
-        }
-
-        public IEnumerator PassiveAttack(Skill skill, BattleChar target)
-        {
-            yield return new WaitForSeconds(0f);
-            if (BattleSystem.instance.EnemyList.Count != 0)
-                yield return BattleSystem.instance.ForceAction(skill, target, false, false, true);
         }
     }
 }

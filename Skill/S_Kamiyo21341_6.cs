@@ -1,5 +1,5 @@
 using System.Linq;
-using UnityEngine;
+using _1ChronoArkKamiyoUtil;
 
 namespace KamiyoMod
 {
@@ -19,17 +19,7 @@ namespace KamiyoMod
 
         public void SkillCasting(CastingSkill ThisSkill)
         {
-            if (!BChar.BuffFind("B_KamiyoCounterMana21431"))
-            {
-                Debug.LogError("Add New Buff");
-                var buff = BChar.BuffAdd("B_KamiyoCounterMana21431", BChar, true) as B_KamiyoCounterMana21431;
-                buff?.GainStack();
-            }
-            else
-            {
-                var buff = BChar.Buffs.FirstOrDefault(x => x is B_KamiyoCounterMana21431) as B_KamiyoCounterMana21431;
-                buff?.GainStack();
-            }
+            KamiyoUtil.GetBuff<B_KamiyoCounterMana21431>(BChar, nameof(B_KamiyoCounterMana21431))?.GainStack();
         }
     }
 }

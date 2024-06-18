@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
+using _1ChronoArkKamiyoUtil;
 using GameDataEditor;
 
 namespace KamiyoMod
@@ -19,21 +20,14 @@ namespace KamiyoMod
         public void BattleStart(BattleSystem Ins)
         {
             BChar.Info.GetData.Text_MasterTarget = ModLocalization.ProgramMasterFinalKamiyo;
-            if (!BChar.BuffFind("B_KamiyoMask21341")) BChar.BuffAdd("B_KamiyoMask21341", BChar);
+            KamiyoUtil.GetBuff<B_KamiyoMask21341>(BChar, nameof(B_KamiyoMask21341));
         }
 
         public void Dodge(BattleChar Char, SkillParticle SP)
         {
             if (Char != BChar) return;
-            if (BChar.HP == BChar.GetStat.maxhp)
-            {
-                BChar.BuffAdd("B_KamiyoShield_21341", BChar);
-                BChar.BuffReturn("B_KamiyoShield_21341").BarrierHP += 2;
-            }
-            else
-            {
-                BChar.Heal(BChar, 2, false, true);
-            }
+            if (BChar.HP == BChar.GetStat.maxhp) KamiyoUtil.AddShieldValue(BChar, nameof(B_KamiyoShield_21341), 2);
+            else BChar.Heal(BChar, 2, false, true);
         }
 
         public override void Init()
@@ -44,6 +38,13 @@ namespace KamiyoMod
 
         public override void FixedUpdate()
         {
+            foreach (var skill in BattleSystem.instance.AllyTeam.Skills.Where(skill =>
+                         skill != null && skill.Master == BChar &&
+                         !skill.AllExtendeds.Any(y => y is Extended_Kamiyo_1)))
+                skill.ExtendedAdd(new Extended_Kamiyo_1());
+            var battleCard = BattleSystem.instance.AllyList.FirstOrDefault(x => x == BChar)?.MyBasicSkill.buttonData;
+            if (battleCard != null && !battleCard.AllExtendeds.Any(x => x is Extended_Kamiyo_1))
+                battleCard.ExtendedAdd(new Extended_Kamiyo_1());
             if (BChar.BuffFind(GDEItemKeys.Buff_B_Neardeath))
             {
                 foreach (var skill in BattleSystem.instance.AllyTeam.Skills.Where(skill => skill.Master == BChar))
@@ -69,6 +70,14 @@ namespace KamiyoMod
                     _changedAp.Remove(skill);
                 }
             }
+        }
+
+        public bool CanAct()
+        {
+            return BattleSystem.instance.SaveSkill.Any(x =>
+                       x.Usestate == BChar && x.skill.AllExtendeds.Any(y => y is S_Kamiyo21341_9)) ||
+                   BattleSystem.instance.CastSkills.Any(x =>
+                       x.Usestate == BChar && x.skill.AllExtendeds.Any(y => y is S_Kamiyo21341_9));
         }
     }
 }
