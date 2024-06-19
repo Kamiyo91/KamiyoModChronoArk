@@ -9,7 +9,7 @@ namespace KamiyoMod
         public static string Buff_B_KamiyoCounterRandomDraw21431 = "B_KamiyoCounterRandomDraw21431";
 		/// <summary>
 		/// Evade Up
-		/// Increase evasion rate by 10%
+		/// Increase evasion rate by 10%. On dodge draw 1 skill
 		/// </summary>
         public static string Buff_B_KamiyoEvadeUp_21341 = "B_KamiyoEvadeUp_21341";
 		/// <summary>
@@ -18,25 +18,6 @@ namespace KamiyoMod
 		/// </summary>
         public static string Buff_B_KamiyoMask21341 = "B_KamiyoMask21341";
         public static string Buff_B_KamiyoShield_21341 = "B_KamiyoShield_21341";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_SilverStein = "CampDial_Kamiyo21341_SilverStein";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Trisha = "CampDial_Kamiyo21341_Trisha";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Ilya = "CampDial_Kamiyo21341_Ilya";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Joey = "CampDial_Kamiyo21341_Joey";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Narhan = "CampDial_Kamiyo21341_Narhan";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Priest = "CampDial_Kamiyo21341_Priest";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Leryn = "CampDial_Kamiyo21341_Leryn";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Sizz = "CampDial_Kamiyo21341_Sizz";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Johan = "CampDial_Kamiyo21341_Johan";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Huz = "CampDial_Kamiyo21341_Huz";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Azar = "CampDial_Kamiyo21341_Azar";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Pheonix = "CampDial_Kamiyo21341_Pheonix";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Lian = "CampDial_Kamiyo21341_Lian";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Red = "CampDial_Kamiyo21341_Red";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Blue = "CampDial_Kamiyo21341_Blue";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Hein = "CampDial_Kamiyo21341_Hein";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Iron = "CampDial_Kamiyo21341_Iron";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Miss = "CampDial_Kamiyo21341_Miss";
-        public static string SimpleCampDialogue_CampDial_Kamiyo21341_Charon = "CampDial_Kamiyo21341_Charon";
         public static string SkillExtended_Extended_Kamiyo_0 = "Extended_Kamiyo_0";
         public static string SkillExtended_Extended_Kamiyo_1 = "Extended_Kamiyo_1";
 		/// <summary>
