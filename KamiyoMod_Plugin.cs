@@ -1,8 +1,9 @@
+using _1ChronoArkKamiyoUtil;
 using ChronoArkMod.Plugin;
+using System.Collections.Generic;
 
 namespace KamiyoMod
 {
-    [PluginConfig("Kamiyo_CharacterMod", "Kamiyo_CharacterMod", "1.0.0")]
     public class KamiyoMod_Plugin : ChronoArkPlugin
     {
         public override void Dispose()
@@ -11,6 +12,7 @@ namespace KamiyoMod
 
         public override void Initialize()
         {
+            KamiyoGlobalModParameters.DialogueTrees.TryAdd("Kamiyo21341", new List<DialogueFinder>());
         }
     }
 }

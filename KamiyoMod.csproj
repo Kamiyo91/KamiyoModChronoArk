@@ -3,7 +3,7 @@
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <OutputType>Library</OutputType>
-    <AssemblyName>KamiyoMod19062024104656</AssemblyName>
+    <AssemblyName>KamiyoMod19062024235217</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <OutputPath>bin\Debug\</OutputPath>
     <DefineConstants>DEBUG;TRACE</DefineConstants>
@@ -385,8 +385,23 @@
       <Private>False</Private>
     </Reference>
     <!-- Extra Reference Start-->
+    <Reference Include="0Harmony">
+      <HintPath>..\..\KamiyoMod\Assemblies\0Harmony.dll</HintPath>
+    </Reference>
     <Reference Include="1ChronoArkKamiyoUtil">
       <HintPath>..\..\KamiyoMod\Assemblies\1ChronoArkKamiyoUtil.dll</HintPath>
+    </Reference>
+    <Reference Include="Mono.Cecil">
+      <HintPath>..\..\KamiyoMod\Assemblies\Mono.Cecil.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\..\KamiyoMod\Assemblies\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\..\KamiyoMod\Assemblies\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="NAudio">
+      <HintPath>..\..\KamiyoMod\Assemblies\NAudio.dll</HintPath>
     </Reference>
 <!-- Extra Reference End-->
   </ItemGroup>
