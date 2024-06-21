@@ -11,7 +11,7 @@ namespace KamiyoMod
         public void Dodge(BattleChar Char, SkillParticle SP)
         {
             if (_stack == 0 || Char != BChar || SP.UseStatus.Info.Ally == BChar.Info.Ally) return;
-            var castingSkill = KamiyoUtil.GetCastingSkill<S_Kamiyo21341_6>(Char);
+            var castingSkill = Char.GetCastingSkill<S_Kamiyo21341_6>();
             KamiyoUtil.Counter(SP.UseStatus, castingSkill, false, true);
             SubStack();
         }

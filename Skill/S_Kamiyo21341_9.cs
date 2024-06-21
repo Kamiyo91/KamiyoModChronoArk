@@ -11,14 +11,13 @@ namespace KamiyoMod
         public void SkillCasting(CastingSkill ThisSkill)
         {
             BChar.Heal(BChar, 2f, false, true);
-            KamiyoUtil.AddShieldValue(BChar, nameof(B_KamiyoShield_21341), (int)(BChar.GetStat.maxhp * 0.20f));
-            KamiyoUtil.GetBuff<B_KamiyoCounterRandomDraw21431>(BChar, nameof(B_KamiyoCounterRandomDraw21431))
-                ?.GainStack();
+            BChar.AddShieldValue(nameof(B_KamiyoShield_21341), (int)(BChar.GetStat.maxhp * 0.20f));
+            BChar.GetBuff<B_KamiyoCounterRandomDraw21431>(nameof(B_KamiyoCounterRandomDraw21431), true)?.GainStack();
         }
 
         public override void SkillUseSingle(Skill SkillD, List<BattleChar> Targets)
         {
-            KamiyoUtil.AddShieldValue(BChar, nameof(B_KamiyoShield_21341), (int)(BChar.GetStat.maxhp * 0.20f));
+            BChar.AddShieldValue(nameof(B_KamiyoShield_21341), (int)(BChar.GetStat.maxhp * 0.20f));
         }
     }
 }

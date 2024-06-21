@@ -10,7 +10,7 @@ namespace KamiyoMod
     {
         public void SkillCasting(CastingSkill ThisSkill)
         {
-            KamiyoUtil.GetBuff<B_KamiyoCounterMana_Ex21431>(BChar, nameof(B_KamiyoCounterMana_Ex21431))?.GainStack();
+            BChar.GetBuff<B_KamiyoCounterMana_Ex21431>(nameof(B_KamiyoCounterMana_Ex21431), true)?.GainStack();
         }
 
         public override bool CanSkillEnforce(Skill MainSkill)

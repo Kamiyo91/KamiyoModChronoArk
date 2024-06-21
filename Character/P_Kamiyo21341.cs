@@ -20,13 +20,13 @@ namespace KamiyoMod
         public void BattleStart(BattleSystem Ins)
         {
             BChar.Info.GetData.Text_MasterTarget = ModLocalization.ProgramMasterFinalKamiyo;
-            KamiyoUtil.GetBuff<B_KamiyoMask21341>(BChar, nameof(B_KamiyoMask21341));
+            BChar.GetBuff<B_KamiyoMask21341>(nameof(B_KamiyoMask21341));
         }
 
         public void Dodge(BattleChar Char, SkillParticle SP)
         {
             if (Char != BChar) return;
-            if (BChar.HP == BChar.GetStat.maxhp) KamiyoUtil.AddShieldValue(BChar, nameof(B_KamiyoShield_21341), 2);
+            if (BChar.HP == BChar.GetStat.maxhp) BChar.AddShieldValue(nameof(B_KamiyoShield_21341), 2);
             else BChar.Heal(BChar, 2, false, true);
         }
 

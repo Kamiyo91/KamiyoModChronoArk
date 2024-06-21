@@ -40,8 +40,8 @@ namespace KamiyoMod
                 if (Targets[0].IsDead) return;
                 var ex = new Extended_Kamiyo_0();
                 ex.SetAdditionalDamage(SkillBasePlus.Target_BaseDMG);
-                KamiyoUtil.AdditionalAttack(BChar, Targets[0],
-                    KamiyoUtil.PrepareSkill(BChar, "S_Kamiyo21341_7_0",
+                BChar.AdditionalAttack(Targets[0],
+                    BChar.PrepareSkill("S_Kamiyo21341_7_0",
                         new KamiyoSkillChangeParameters(0, true, 0, 0, new List<Skill_Extended> { ex })), _dodgeCount);
             }
         }

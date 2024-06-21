@@ -19,7 +19,8 @@ namespace KamiyoMod
 
         public void SkillCasting(CastingSkill ThisSkill)
         {
-            KamiyoUtil.GetBuff<B_KamiyoCounterMana21431>(BChar, nameof(B_KamiyoCounterMana21431))?.GainStack();
+            BChar.GetBuff<B_KamiyoCounterMana21431>(nameof(B_KamiyoCounterMana21431), true)?.GainStack();
+            ThisSkill.Target.GetBuffTarget<B_Taunt>(BChar, nameof(B_Taunt));
         }
     }
 }

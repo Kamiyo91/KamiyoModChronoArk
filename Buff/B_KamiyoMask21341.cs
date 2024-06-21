@@ -19,7 +19,7 @@ namespace KamiyoMod
             if (!(hit is BattleEnemy battleEnemy)) return;
             if (battleEnemy.SkillQueue.Count == 0 ||
                 (battleEnemy.SkillQueue[0].CastSpeed != 0 && battleEnemy.SkillQueue[0].CastSpeed != 1)) return;
-            KamiyoUtil.DrawPrefCharacterSkillFromDeck(BChar);
+            BChar.DrawPrefCharacterSkillFromDeck();
         }
     }
 }

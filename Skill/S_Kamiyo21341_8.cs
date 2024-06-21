@@ -11,7 +11,7 @@ namespace KamiyoMod
         public override void SkillUseSingle(Skill SkillD, List<BattleChar> Targets)
         {
             BattleSystem.instance.AllyTeam.Draw(1);
-            KamiyoUtil.AddShieldValue(BChar, nameof(B_KamiyoShield_21341), (int)(BChar.GetStat.maxhp * 0.10f));
+            BChar.AddShieldValue(nameof(B_KamiyoShield_21341), (int)(BChar.GetStat.maxhp * 0.10f));
         }
     }
 }

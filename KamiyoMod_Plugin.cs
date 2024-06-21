@@ -1,6 +1,6 @@
+using System.Collections.Generic;
 using _1ChronoArkKamiyoUtil;
 using ChronoArkMod.Plugin;
-using System.Collections.Generic;
 
 namespace KamiyoMod
 {

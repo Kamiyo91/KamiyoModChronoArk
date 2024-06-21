@@ -15,10 +15,10 @@ namespace KamiyoMod
         public void Dodge(BattleChar Char, SkillParticle SP)
         {
             if (_stack == 0 || Char != BChar || SP.UseStatus.Info.Ally == BChar.Info.Ally) return;
-            var castingSkill = KamiyoUtil.GetCastingSkill<S_Kamiyo21341_9>(Char);
+            var castingSkill = Char.GetCastingSkill<S_Kamiyo21341_9>();
             if (castingSkill == null) return;
-            KamiyoUtil.DrawCharacterSkill(BChar,
-                KamiyoUtil.PrepareRandomSkill(BChar, SkillKeys,
+            BChar.DrawCharacterSkill(
+                BChar.PrepareRandomSkill(SkillKeys,
                     new KamiyoSkillChangeParameters(ap: -99, autoDelete: 2)));
             KamiyoUtil.Counter(BChar, castingSkill, false, false);
             SubStack();
